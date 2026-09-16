@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "built_at_utc": "2026-09-16T19:17:47.421730+00:00",
+  "sources": {
+    "sales": "/Users/arya.shahdi/analytics-playground/2025/02_26_family_forecast/product_level/inputs.csv",
+    "sales_bytes": 919178533,
+    "releases": "/Users/arya.shahdi/analytics-playground/2025/02_26_family_forecast/product_level/Product Release Dates.xlsx",
+    "sale_periods": "/Users/arya.shahdi/analytics-playground/2025/02_26_family_forecast/product_level/config/sale_periods.csv"
+  },
+  "raw": {
+    "rows": 3485426,
+    "revenue": 2831081580.319935,
+    "units": 31761946,
+    "ingest_parse": {
+      "source_file_rows": 3485426,
+      "missing_order_date_rows": 0,
+      "invalid_order_date_rows": 0,
+      "missing_revenue_rows": 0,
+      "invalid_revenue_rows": 0,
+      "missing_unit_rows": 0,
+      "invalid_unit_rows": 0
+    },
+    "unique_key_duplicates": 0,
+    "apparent_duplicate_review": {
+      "groups": 2578,
+      "possible_extra_rows": 2578,
+      "possible_extra_revenue": 3192610.49
+    },
+    "metadata_instability": {
+      "skus_with_multiple_titles": 2116,
+      "skus_with_multiple_colors": 2983,
+      "skus_with_multiple_categories": 615
+    },
+    "min_order_date": "2025-01-01",
+    "max_order_date": "2026-09-15",
+    "null_sku_rows": 1
+  },
+  "processed": {
+    "fact_rows": 1379103,
+    "products": 7117,
+    "revenue": 2831081580.319832,
+    "units": 31761946,
+    "revenue_delta_vs_raw": -0.000102996826171875,
+    "units_delta_vs_raw": 0,
+    "product_family_pairs": 4114,
+    "member_products": 3933,
+    "represented_drops": 100,
+    "taxonomy_conflicts": {
+      "mixed_business_line_products": 380,
+      "mixed_business_line_revenue": 341817648.16999984,
+      "mixed_category_products": 98,
+      "mixed_category_revenue": 10184279.680000002,
+      "mixed_subcategory_products": 102,
+      "mixed_subcategory_revenue": 10555434.690000001,
+      "mixed_item_class_products": 79,
+      "mixed_item_class_revenue": 7830401.150000001
+    }
+  },
+  "release_calendar": {
+    "release_rows": 441,
+    "populated_tags": 440,
+    "canonical_rows": 103,
+    "canonical_rows_with_dates": 103,
+    "canonical_rows_missing_dates": 0
+  },
+  "daily_context": {
+    "latest_source_date": "2026-09-15",
+    "latest_complete_date": "2026-09-14",
+    "latest_source_date_flagged_incomplete": true,
+    "configured_sale_days": 68,
+    "automated_volume_spike_days": 32,
+    "volume_spike_rule": "daily revenue >= 3x trailing 28-day median and >= global p90"
+  },
+  "methodology": {
+    "canonical_regex": "^(?P<season>SP|SU|FA|HO|WT)(?P<year>\\d{2})D(?P<drop>\\d+)-family$",
+    "family_assignment": "Core planning-status rows take precedence; otherwise choose the most recently anchored validated conventional family attached to the product-color. Membership starts no earlier than one day before its first observed exact tag (and never before Early Access/Launch), then persists forward; all unmatched rows remain Rest.",
+    "product_key": "normalized product name + color using one coherent most-complete/latest metadata record per SKU; product_id is retained but not trusted as identity",
+    "taxonomy": "business line/category/subcategory/item class are retained from each SKU's coherent metadata record in the additive fact; multi-taxonomy product-color summaries are labeled Mixed / multiple instead of choosing one SKU arbitrarily",
+    "revenue": "source revenue is preserved; supplied rolling fields and source price are not used",
+    "source_duplicates": "distinct source unique keys are preserved; identical date/SKU/revenue/unit groups are flagged for review rather than deleted"
+  },
+  "contribution_reconciliation": [
+    {
+      "bucket_type": "Core",
+      "revenue": 863098913.1100031,
+      "units": 10338376
+    },
+    {
+      "bucket_type": "Eligible conventional drop",
+      "revenue": 1337126953.72014,
+      "units": 14648154
+    },
+    {
+      "bucket_type": "Rest / no eligible conventional drop",
+      "revenue": 630855713.4899888,
+      "units": 6775416
+    }
+  ]
+}
