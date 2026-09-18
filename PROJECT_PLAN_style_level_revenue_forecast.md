@@ -18,7 +18,7 @@ consulted, so there are no external links to cite.
 ### 1.1 The question
 
 Can weekly revenue be forecast four weeks ahead at the level of an individual style, accurately
-enough for merchandising to plan on, using a method whose logic a merchant can follow and challenge?
+enough for merchandising to plan on, using a method whose logic a stakeholder can follow and challenge?
 
 A **style** is a product name with the colour removed. `Grounded No-Slip Mat Towel - Gravel` and
 `Grounded No-Slip Mat Towel - Jungle` are two colours of one style.
@@ -32,7 +32,7 @@ A **style** is a product name with the colour removed. `Grounded No-Slip Mat Tow
 | Grain | Weekly | Daily revenue in this data is volatile and drop-driven. Weekly is the stable starting grain. Daily is a later phase |
 | Measure | Revenue | Set by the business |
 | Accuracy bar | Under 5% error on total revenue, four weeks ahead | Set by the business. Section 4.3 defines exactly how this is computed |
-| Method constraint | Explainable. Every forecast must decompose into terms a merchant can name | A number nobody can interrogate will not be used, regardless of its accuracy |
+| Method constraint | Explainable. Every forecast must decompose into terms a stakeholder can name | A number nobody can interrogate will not be used, regardless of its accuracy |
 | Starting position | Nothing exists at this grain and nothing will be supplied | The only comparison points are the naive baselines built in Phase 9 |
 
 ### 1.3 What this project is not
@@ -315,7 +315,7 @@ protects against the slow overfitting that comes from repeatedly looking at the 
 
 A grouping of styles built only from information available **before** the forecast window opens.
 Growth-shape clustering is explicitly excluded, because it groups styles on the very history being
-predicted, it is unstable across re-runs, and a merchant cannot apply the label to a style that has
+predicted, it is unstable across re-runs, and a stakeholder cannot apply the label to a style that has
 no history yet. Permitted inputs are listed in Phase 4.
 
 ---
@@ -449,7 +449,7 @@ group. Whether the five small business lines, together under $7M of $2.83B, stay
 
 ### Phase 4 — Segmentation on traits known in advance
 
-**Question.** What groups of styles behave alike, in terms a merchant would recognise?
+**Question.** What groups of styles behave alike, in terms a stakeholder would recognise?
 
 **Permitted inputs.** All computable as-of a forecast origin without seeing the future.
 
@@ -469,7 +469,7 @@ at forecast time; and FPPhaseOut and Markdown styles whose trend is a decline to
 
 Status transitions deserve particular attention. Because `planning_status` is recorded per row per
 date, a style moving Core → Carryover → FPPhaseOut is visible in the data before the revenue decline
-completes. That is both a predictive signal and an explanation a merchant will accept.
+completes. That is both a predictive signal and an explanation a stakeholder will accept.
 
 **Deliverable.** `reports/P4_segments.md` with segment definitions, style counts, revenue shares, and
 a plain-language description of each segment.
@@ -575,7 +575,7 @@ segment.
   forecast difficulty.
 
 **Why this matters for the explainability constraint.** "We expect nine percent fewer units at four
-percent lower realised price" is a sentence a merchant can dispute on its merits. A single revenue
+percent lower realised price" is a sentence a stakeholder can dispute on its merits. A single revenue
 number is not.
 
 **Deliverable.** `reports/P7_units_price.md`.
@@ -751,7 +751,7 @@ This still delivers a usable style-level number and a clear account of what limi
 | R4 | Under two years of history | Each calendar week is observed roughly 1.7 times, so per-style annual seasonality cannot be estimated. Anything claiming to learn it is fitting noise | Estimate seasonality only at aggregate level. State the limitation in the readout |
 | R5 | Drop calendar not populated four weeks forward | Method works in backtest and fails in live use | Resolve B7 before any production commitment |
 | R6 | Overfitting to roughly 88 weeks | Backtest looks strong, live performance does not | Many rolling origins, preference for simple methods, and the final 8 weeks held back untouched |
-| R7 | Segment definitions drift between runs | Merchants lose confidence in the output | Segments use only traits known in advance, and definitions are frozen after Phase 4 |
+| R7 | Segment definitions drift between runs | stakeholders lose confidence in the output | Segments use only traits known in advance, and definitions are frozen after Phase 4 |
 | R8 | Explainability traded away under accuracy pressure | The output is rejected by its users | Explainability is a hard requirement and is recorded in the measurement spec |
 | R9 | Scope creep into colour and size | Timeline slips | Colour is limited to the Phase 6 decomposition. Size is absent from the fact table entirely |
 | R10 | Nothing exists to compare against, so the error figure is argued over rather than accepted | The result stalls in review | Sign off the measurement spec before any number exists. Lead with skill against the project's own baselines |
