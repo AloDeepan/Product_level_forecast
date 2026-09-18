@@ -1,7 +1,6 @@
 # Project Plan — Style-Level Weekly Revenue Forecast
 
-**Document type:** execution handoff. Written to be read by a coding agent (Claude Code) and by the
-humans reviewing its output.
+**Document type:** execution handoff. 
 **Version:** 2.0 · **Date:** 2026-09-18
 **Repository:** https://github.com/AloDeepan/Product_level_forecast.git
 **Data reference:** `DATA_MODEL.md` and `to_share/README.md` in that repository. Section numbers
