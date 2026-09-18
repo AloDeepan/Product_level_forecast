@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "built_at_utc": "2026-09-16T19:17:47.421730+00:00",
+  "built_at_utc": "2026-09-17T17:16:38.177962+00:00",
   "sources": {
-    "sales": "/Users/arya.shahdi/analytics-playground/2025/02_26_family_forecast/product_level/inputs.csv",
+    "sales": "/Users/deepanvishal.thulasivel/Library/CloudStorage/OneDrive-COLORIMAGEINC/Git Local/Product_level_forecast/Product_level_forecast/to_share/inputs.csv",
     "sales_bytes": 919178533,
-    "releases": "/Users/arya.shahdi/analytics-playground/2025/02_26_family_forecast/product_level/Product Release Dates.xlsx",
-    "sale_periods": "/Users/arya.shahdi/analytics-playground/2025/02_26_family_forecast/product_level/config/sale_periods.csv"
+    "releases": "/Users/deepanvishal.thulasivel/Library/CloudStorage/OneDrive-COLORIMAGEINC/Git Local/Product_level_forecast/Product_level_forecast/to_share/Product Release Dates.xlsx",
+    "sale_periods": "/Users/deepanvishal.thulasivel/Library/CloudStorage/OneDrive-COLORIMAGEINC/Git Local/Product_level_forecast/Product_level_forecast/to_share/config/sale_periods.csv"
   },
   "raw": {
     "rows": 3485426,
-    "revenue": 2831081580.319935,
+    "revenue": 2831081580.3198595,
     "units": 31761946,
     "ingest_parse": {
       "source_file_rows": 3485426,
@@ -38,9 +38,9 @@
   "processed": {
     "fact_rows": 1379103,
     "products": 7117,
-    "revenue": 2831081580.319832,
+    "revenue": 2831081580.3198504,
     "units": 31761946,
-    "revenue_delta_vs_raw": -0.000102996826171875,
+    "revenue_delta_vs_raw": -9.059906005859375e-06,
     "units_delta_vs_raw": 0,
     "product_family_pairs": 4114,
     "member_products": 3933,
@@ -49,11 +49,11 @@
       "mixed_business_line_products": 380,
       "mixed_business_line_revenue": 341817648.16999984,
       "mixed_category_products": 98,
-      "mixed_category_revenue": 10184279.680000002,
+      "mixed_category_revenue": 10184279.68,
       "mixed_subcategory_products": 102,
-      "mixed_subcategory_revenue": 10555434.690000001,
+      "mixed_subcategory_revenue": 10555434.69,
       "mixed_item_class_products": 79,
-      "mixed_item_class_revenue": 7830401.150000001
+      "mixed_item_class_revenue": 7830401.15
     }
   },
   "release_calendar": {
@@ -82,17 +82,17 @@
   "contribution_reconciliation": [
     {
       "bucket_type": "Core",
-      "revenue": 863098913.1100031,
+      "revenue": 863098913.1100065,
       "units": 10338376
     },
     {
       "bucket_type": "Eligible conventional drop",
-      "revenue": 1337126953.72014,
+      "revenue": 1337126953.7201266,
       "units": 14648154
     },
     {
       "bucket_type": "Rest / no eligible conventional drop",
-      "revenue": 630855713.4899888,
+      "revenue": 630855713.489989,
       "units": 6775416
     }
   ]
