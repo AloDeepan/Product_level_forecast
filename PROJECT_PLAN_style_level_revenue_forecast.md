@@ -7,8 +7,7 @@
 below are cited as §N and refer to `DATA_MODEL.md` unless the text says README.
 
 **Sources used to write this plan.** Only the two repository documents named above, plus direct
-inspection of the cloned repository. No web search was performed and no outside material was
-consulted, so there are no external links to cite.
+inspection of the cloned repository. 
 
 ---
 
